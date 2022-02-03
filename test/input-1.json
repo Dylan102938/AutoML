@@ -14,5 +14,12 @@
     }
   ],
 
-  "outputs": []
+  "outputs": [],
+  "joins": [
+    {
+      "source": "sky-photos",
+      "join-condition": "sort",
+      "join-column": "file_name"
+    }
+  ]
 }
