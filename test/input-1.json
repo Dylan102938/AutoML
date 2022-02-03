@@ -1,0 +1,18 @@
+{
+  "inputs": [
+    {
+      "name": "sky-photos",
+      "format": "image",
+      "transformer": "vector",
+      "location": "./assets/sky-photos"
+    },
+    {
+      "name": "temperature",
+      "format": "tabular",
+      "transformer": "none",
+      "location": "./assets/weather-data.csv"
+    }
+  ],
+
+  "outputs": []
+}
