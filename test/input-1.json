@@ -1,5 +1,6 @@
 {
   "inputs": [
+    // essential input types for MVP: photo, natural language, tabular
     {
       "name": "sky-photos",
       "format": "image",
@@ -11,15 +12,106 @@
       "format": "tabular",
       "transformer": "none",
       "location": "./assets/weather-data.csv"
-    }
+    },
+    {
+      "name": "Q3 Cash Flow Statement",
+      "format": "tabular",
+      "transformer": "none",
+      "location": "./assets/cash-flow-statement.xlsx"
+    },
+    {
+      "name": "Davos Speech",
+      "format": "audio",
+      "transformer": "transcript NLP",
+      "location": "./assets/davos-speech.mp3"
+    },
+    {
+      "name": "Jane Smith Resume",
+      "format": "natural language",
+      "transformer": "NLP",
+      "location": "./assets/jane-smith-resume.pdf"
+    },
+    {
+      "name": "Traffic Cam",
+      "format": "video",
+      "transformer": "vector",
+      "location": "./assets/traffic-cam.mp4"
+    },
+    {
+      "name": "About Me Page",
+      "format": "website",
+      "transformer": "NLP",
+      "location": "./assets/about-me.html"
+    },
+    {
+        //this type of input would likely require a data warehouse from the customer
+      "name": "Yelp Reviews",
+      "format": "tabular, image, natural language",
+      "transformer": "NLP, vector",
+      "location": "not sure how this type of multi-format data would be stored."
+    },
+      {
+      "name": "In-App Ride request data",
+      "format": "tabular",
+      "transformer": "none",
+      "location": "./assets/app-data.csv"
+    },
   ],
 
-  "outputs": [],
-  "joins": [
+  "outputs": [
     {
-      "source": "sky-photos",
-      "join-condition": "sort",
-      "join-column": "file_name"
+      "name": "Joined Data",
+      "format": "tabular",    
+      "location": "./assets/about-me.html"
     }
+
+  ],
+
+  "joins": [
+
+    {
+      "source 1": "sky-photos", //JPG
+      "source 2": "temperature", //JSON
+      "join-condition": "equals to",
+      "join attribute input": "timestamp",
+      "source 1 join attribute": "timestamp metadata",
+      "source 2 join attribute": "time column",
+    },
+    {
+      "source 1": "Historical Cash Flow Statements", //CSV
+      "source 2": "Parking lot satellite images", //JPEG
+      "join-condition": "Timeframe (timestamp after Date1, after Date2)", 
+      "join attribute input": "timestamp",
+      "source 1 join attribute": "date column",   
+      "source 2 join attribute": "timestamp metadata",
+    },
+    {
+      "source 1": "Historical Cash Flow Statements", //CSV
+      "source 2": "Parking lot satellite images", //JPEG
+      "join-condition": "Timeframe (timestamp after Date1, after Date2)", 
+      "join attribute input": "timestamp",
+      "source 1 join attribute": "date column",   
+      "source 2 join attribute": "timestamp metadata",
+    },
+    {
+      "source 1": "Yelp Reviews", //CSV
+      "source 2": "Yelp Review Photos", //JPEG
+      "join-condition": "equals", 
+      "join attribute input": "username",
+      "source 1 join attribute": "name column",   
+      "source 2 join attribute": "labelled name",
+    },
+    {
+      "source 1": "Traffic Cam", //mp4
+      "source 2": "App Data", //csv
+      "source 3": "weather data", //csv
+
+      "join-condition": "equals", 
+      "filter attribute": "location", //csv
+      "join attribute input": "username",
+      "source 1 join attribute": "name column",   
+      "source 2 join attribute": "labelled name",
+    },
+
   ]
 }
