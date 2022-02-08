@@ -1,0 +1,55 @@
+{
+  "inputs": [
+    {
+      "name": "temperature",
+      "format": "tabular",
+      "transformer": "none",
+      "use_input": true,
+      "location": "../assets/weather-data.csv"
+    },
+    {
+      "name": "date",
+      "format": "tabular",
+      "transformer": "none",
+      "use_input": false,
+      "location": "../assets/weather-data.csv"
+    },
+    {
+      "name": "raining",
+      "format": "tabular",
+      "transformer": "categorize",
+      "use_input": true,
+      "location": "../assets/raining.csv"
+    },
+    {
+      "name": "date",
+      "format": "tabular",
+      "transformer": "none",
+      "use_input": false,
+      "location": "../assets/raining.csv"
+    }
+  ],
+
+  "predictions": [
+    {
+      "name": "storm_tomorrow",
+      "format": "tabular",
+      "transformer": "categorize",
+      "location": "../assets/weather-data.csv"
+    }
+  ],
+
+  "joins": [
+    {
+      "source_names": [
+        "raining",
+        "temperature"
+      ],
+      "join_cond": "equals",
+      "join_names": [
+        "date",
+        "date"
+      ]
+    }
+  ]
+}

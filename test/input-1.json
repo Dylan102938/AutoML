@@ -1,6 +1,5 @@
 {
   "inputs": [
-    // essential input types for MVP: photo, natural language, tabular
     {
       "name": "sky-photos",
       "format": "image",
@@ -44,7 +43,6 @@
       "location": "./assets/about-me.html"
     },
     {
-        //this type of input would likely require a data warehouse from the customer
       "name": "Yelp Reviews",
       "format": "tabular, image, natural language",
       "transformer": "NLP, vector",
@@ -55,7 +53,7 @@
       "format": "tabular",
       "transformer": "none",
       "location": "./assets/app-data.csv"
-    },
+    }
   ],
 
   "outputs": [
@@ -64,54 +62,52 @@
       "format": "tabular",    
       "location": "./assets/about-me.html"
     }
-
   ],
 
   "joins": [
 
     {
-      "source 1": "sky-photos", //JPG
-      "source 2": "temperature", //JSON
+      "source 1": "sky-photos",
+      "source 2": "temperature",
       "join-condition": "equals to",
       "join attribute input": "timestamp",
       "source 1 join attribute": "timestamp metadata",
-      "source 2 join attribute": "time column",
+      "source 2 join attribute": "time column"
     },
     {
-      "source 1": "Historical Cash Flow Statements", //CSV
-      "source 2": "Parking lot satellite images", //JPEG
+      "source 1": "Historical Cash Flow Statements",
+      "source 2": "Parking lot satellite images",
       "join-condition": "Timeframe (timestamp after Date1, after Date2)", 
       "join attribute input": "timestamp",
       "source 1 join attribute": "date column",   
-      "source 2 join attribute": "timestamp metadata",
+      "source 2 join attribute": "timestamp metadata"
     },
     {
-      "source 1": "Historical Cash Flow Statements", //CSV
-      "source 2": "Parking lot satellite images", //JPEG
-      "join-condition": "Timeframe (timestamp after Date1, after Date2)", 
+      "source 1": "Historical Cash Flow Statements",
+      "source 2": "Parking lot satellite images",
+      "join-condition": "Timeframe (timestamp after Date1, after Date2)",
       "join attribute input": "timestamp",
       "source 1 join attribute": "date column",   
-      "source 2 join attribute": "timestamp metadata",
+      "source 2 join attribute": "timestamp metadata"
     },
     {
-      "source 1": "Yelp Reviews", //CSV
-      "source 2": "Yelp Review Photos", //JPEG
+      "source 1": "Yelp Reviews",
+      "source 2": "Yelp Review Photos",
       "join-condition": "equals", 
       "join attribute input": "username",
       "source 1 join attribute": "name column",   
-      "source 2 join attribute": "labelled name",
+      "source 2 join attribute": "labelled name"
     },
     {
-      "source 1": "Traffic Cam", //mp4
-      "source 2": "App Data", //csv
-      "source 3": "weather data", //csv
+      "source 1": "Traffic Cam",
+      "source 2": "App Data",
+      "source 3": "weather data",
 
       "join-condition": "equals", 
-      "filter attribute": "location", //csv
+      "filter attribute": "location",
       "join attribute input": "username",
       "source 1 join attribute": "name column",   
-      "source 2 join attribute": "labelled name",
-    },
-
+      "source 2 join attribute": "labelled name"
+    }
   ]
 }
