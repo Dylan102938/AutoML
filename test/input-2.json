@@ -42,10 +42,10 @@
   "joins": [
     {
       "source_names": [
-        "raining",
-        "temperature"
+        "../assets/raining.csv",
+        "../assets/weather-data.csv"
       ],
-      "join_cond": "equals",
+      "join_cond": "on_column",
       "join_names": [
         "date",
         "date"
