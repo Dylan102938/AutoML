@@ -65,7 +65,6 @@
   ],
 
   "joins": [
-
     {
       "source 1": "sky-photos",
       "source 2": "temperature",
