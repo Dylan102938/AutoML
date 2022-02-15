@@ -1,13 +1,14 @@
 import csv
 import json
 
-output_dir = "../../test/"
-count = 3
+output_dir = "../"
 
 
-def load_all_from_csv(f_name, prediction):
+def load_csv_to_input_structure(f_name, prediction):
+    count = 3
+
     result = {
-        "inputs": [],
+        "input_structure": [],
         "predictions": [],
         "joins": []
     }
@@ -18,7 +19,7 @@ def load_all_from_csv(f_name, prediction):
 
         for col in row:
             if col != prediction:
-                result["inputs"].append({
+                result["input_structure"].append({
                     "name": col,
                     "format": "tabular",
                     "transformer": "none",
@@ -38,5 +39,6 @@ def load_all_from_csv(f_name, prediction):
         f.write(json_str)
 
 
-if __name__ == "__main__":
-    load_all_from_csv("C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv", "Class")
+def generate_metadata_from_kaggle_link(url):
+    # ToDo
+    return None

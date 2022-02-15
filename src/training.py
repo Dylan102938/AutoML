@@ -55,7 +55,7 @@ def train_classifier(x, y, cols_x, cols_y, out_results=True):
 
 
 if __name__ == "__main__":
-    with open("../test/input-3.json") as f:
+    with open("../tests/configs/input_structure/input-3.json") as f:
         data_format = f.read()
 
     df = middleware.json_to_pandas(data_format)

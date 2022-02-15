@@ -52,7 +52,7 @@ def json_to_pandas(data_format):
     data_format = json.loads(data_format)
 
     # load all data from sources and filter it
-    for source in (data_format['inputs'] + data_format['predictions']):
+    for source in (data_format['input_structure'] + data_format['predictions']):
         if source['location'] not in tables:
             if source['format'] == 'tabular': tables[source['location']] = pd.read_csv(source['location'])
             else: continue
@@ -76,11 +76,11 @@ def json_to_pandas(data_format):
     # delete unnecessary columns
     merged_table = list(tables.values())[0]
     deleted_cols = {}
-    for source in data_format['inputs']:
+    for source in data_format['input_structure']:
         if not source['use_input'] and source['name'] in merged_table.columns:
             deleted_cols[source['name']] = merged_table[source['name']].tolist()
             merged_table = merged_table.drop(source['name'], axis=1)
-    for source in data_format['inputs']:
+    for source in data_format['input_structure']:
         if source['use_input'] and source['name'] not in merged_table.columns:
             merged_table[source['name']] = deleted_cols[source['name']]
             deleted_cols.pop(source['name'])
@@ -101,7 +101,7 @@ join_conds = {
 
 
 def main():
-    with open("../test/input-3.json") as f:
+    with open("../tests/configs/input_structure/input-3.json") as f:
         data_format = f.read()
 
     print(json_to_pandas(data_format))
