@@ -1,222 +1,89 @@
 {
-  "inputs": [
+  "input_structure": [
     {
-      "name": "Time",
+      "name": "PassengerId",
       "format": "tabular",
       "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "use_input": false,
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V1",
+      "name": "Pclass",
       "format": "tabular",
       "transformer": "none",
       "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V2",
+      "name": "Name",
       "format": "tabular",
       "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "use_input": false,
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V3",
+      "name": "Sex",
       "format": "tabular",
-      "transformer": "none",
+      "transformer": "",
       "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V4",
+      "name": "Age",
       "format": "tabular",
       "transformer": "none",
       "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V5",
+      "name": "SibSp",
       "format": "tabular",
       "transformer": "none",
       "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V6",
+      "name": "Parch",
       "format": "tabular",
       "transformer": "none",
       "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V7",
+      "name": "Ticket",
       "format": "tabular",
       "transformer": "none",
       "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V8",
+      "name": "Fare",
       "format": "tabular",
       "transformer": "none",
       "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V9",
+      "name": "Cabin",
       "format": "tabular",
       "transformer": "none",
       "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     },
     {
-      "name": "V10",
+      "name": "Embarked",
       "format": "tabular",
       "transformer": "none",
       "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V11",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V12",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V13",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V14",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V15",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V16",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V17",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V18",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V19",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V20",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V21",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V22",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V23",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V24",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V25",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V26",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V27",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "V28",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
-    },
-    {
-      "name": "Amount",
-      "format": "tabular",
-      "transformer": "none",
-      "use_input": true,
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     }
   ],
   "predictions": [
     {
-      "name": "Class",
+      "name": "Survived",
       "format": "tabular",
       "transformer": "categorize",
-      "location": "C:/Users/dylan/Documents/AutoML/assets/credit_card/creditcard.csv"
+      "location": "../data/titanic/train.csv"
     }
   ],
   "joins": []

@@ -101,10 +101,23 @@ join_conds = {
 
 
 def main():
-    with open("../tests/configs/input_structure/input-3.json") as f:
-        data_format = f.read()
+    x = pd.read_csv("../tests/data/titanic/train.csv",
+                usecols=["Survived","Pclass","Sex","Age","SibSp","Parch","Fare","Cabin","Embarked"])
+    print(x)
+    x["Sex"] = categorize(list(x["Sex"]))
 
-    print(json_to_pandas(data_format))
+    def replace_nan_with_0(y):
+        for i, entry in enumerate(y):
+            if entry == pd.DataFrame.nan:
+                y[i] = 0
+
+        return y
+
+    print(list(x["Cabin"]))
+    x["Cabin"] = replace_nan_with_0(list(x["Cabin"]))
+
+
+    x.to_csv("../tests/data/titanic/train-filtered.csv")
 
 
 if __name__ == "__main__":
