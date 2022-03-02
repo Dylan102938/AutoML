@@ -2,36 +2,30 @@ import settings
 import os
 import json
 from abc import ABC, abstractmethod
-from typing import Any, List, Dict
+from typing import Any, Union, Dict
 from typing_extensions import TypedDict
 
 
 class Config(TypedDict):
-    data_path: str
-    batch_size: int
-    epochs: int
-    outputs: List[str]
+    outputs_col: Union[str, int]
     output_mapping: Dict[int, Any]
-    split_ratio: float
+    parameters: Dict[str, Any]
 
 
 class Classifier(ABC):
+    default_config: Any = {}
+    config: Any
 
-    configs: Config
-
-    def __init__(self, config: Config):
-        self.configs = config
+    def __init__(self, config: Any):
+        self.config = dict(self.default_config)
+        self.config.update(config)
 
     @abstractmethod
-    def train(self) -> None:
+    def train(self, data: Any) -> Any:
         ...
 
     @abstractmethod
     def predict(self, model_input: Any) -> Any:
-        ...
-
-    @abstractmethod
-    def test(self) -> None:
         ...
 
     @classmethod

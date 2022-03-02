@@ -1,8 +1,8 @@
 import settings
 import os
 import pandas as pd
-from src.middleware.pre_processor import TabularPreProcessor
-from src.models.basic_classifier import BasicClassifier
+from eva.middleware.pre_processor import TabularPreProcessor
+from eva.models.naive_bayes import BasicClassifier
 import numpy as np
 
 if __name__ == "__main__":

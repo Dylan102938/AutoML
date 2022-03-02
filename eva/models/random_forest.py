@@ -3,7 +3,7 @@ import pandas as pd
 from typing import List, Any
 import os
 
-from src.models.classifier import Classifier, Config
+from eva.models.classifier import Classifier, Config
 
 
 class CNNClassifier(Classifier):
