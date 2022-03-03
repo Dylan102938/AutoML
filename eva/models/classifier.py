@@ -21,7 +21,7 @@ class Classifier(ABC):
         self.config.update(config)
 
     @abstractmethod
-    def train(self, data: Any) -> Any:
+    def train(self, x: Any, y: Any) -> Any:
         ...
 
     @abstractmethod

@@ -23,8 +23,7 @@ class NaiveBayesClassifier(Classifier):
         super().__init__(config)
         self.model = None
 
-    def train(self, data: pd.DataFrame) -> Any:
-
+    def train(self, x: pd.DataFrame, y: pd.DataFrame) -> Any:
         models = {
             "gaussian": GaussianNB(),
             "multinomial": MultinomialNB(),
@@ -33,9 +32,6 @@ class NaiveBayesClassifier(Classifier):
         }
 
         assert self.config["parameters"]["feature_type"] in models
-
-        x = data.drop(columns=self.config["outputs_col"])
-        y = data[self.config["outputs_col"]]
 
         classifier = models[self.config["parameters"]["feature_type"]]
         self.model = classifier.fit(x, y)
